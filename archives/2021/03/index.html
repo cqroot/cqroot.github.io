@@ -11,7 +11,7 @@
   
   <title>
     
-      Category 
+      archive_a: 2021/3 
       
       
       |
@@ -91,38 +91,104 @@
 
 
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
-<!-- LaTex Display -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
+<!-- last: 按年份把文章分组，当前遍历到的年份 -->
+<!-- now: 当前遍历到的文章的发布年份 -->
 
-
-
-  
-  <!-- 分类页 url形式：https://yoursite/categories/ -->
-  <div class="container category-index">
-    <div>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Go/">Go</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Storage/">Storage</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li></ul>
-    </div>
+<div class="container archives">
+  <div class="post-list">
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2021</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="Go使用cobra开发CLI工具">
+        <div class="time-m-d">03-18</div>
+        <div class="title">
+          <a href="/2021/03/18/Go/Go%E4%BD%BF%E7%94%A8cobra%E5%BC%80%E5%8F%91CLI%E5%B7%A5%E5%85%B7/">
+            <span>Go使用cobra开发CLI工具</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Qt使用StyleSheet美化QListView或QListWidget">
+        <div class="time-m-d">02-14</div>
+        <div class="title">
+          <a href="/2021/02/14/Qt/Qt%E4%BD%BF%E7%94%A8StyleSheet%E7%BE%8E%E5%8C%96QListView%E6%88%96QListWidget/">
+            <span>Qt使用StyleSheet美化QListView或QListWidget</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Qt使用StyleSheet美化QPushButton">
+        <div class="time-m-d">02-14</div>
+        <div class="title">
+          <a href="/2021/02/14/Qt/Qt%E4%BD%BF%E7%94%A8StyleSheet%E7%BE%8E%E5%8C%96QPushButton/">
+            <span>Qt使用StyleSheet美化QPushButton</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Go Map 类型">
+        <div class="time-m-d">02-13</div>
+        <div class="title">
+          <a href="/2021/02/13/Go/Go-Map-%E7%B1%BB%E5%9E%8B/">
+            <span>Go Map 类型</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Go Slice 切片类型">
+        <div class="time-m-d">02-13</div>
+        <div class="title">
+          <a href="/2021/02/13/Go/Go-Slice-%E5%88%87%E7%89%87%E7%B1%BB%E5%9E%8B/">
+            <span>Go Slice 切片类型</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Win10 好用的软件集合">
+        <div class="time-m-d">02-11</div>
+        <div class="title">
+          <a href="/2021/02/11/Windows/Win10-%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%E9%9B%86%E5%90%88/">
+            <span>Win10 好用的软件集合</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="parted 分区工具">
+        <div class="time-m-d">02-10</div>
+        <div class="title">
+          <a href="/2021/02/10/Storage/parted-%E5%88%86%E5%8C%BA%E5%B7%A5%E5%85%B7/">
+            <span>parted 分区工具</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Windows和Linux互换左Ctrl和CapsLock">
+        <div class="time-m-d">02-10</div>
+        <div class="title">
+          <a href="/2021/02/10/Windows/Windows%E5%92%8CLinux%E4%B8%AD%E4%BA%92%E6%8D%A2%E5%B7%A6Ctrl%E5%92%8CCapsLock/">
+            <span>Windows和Linux互换左Ctrl和CapsLock</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Vim 对特殊字符的操作">
+        <div class="time-m-d">02-10</div>
+        <div class="title">
+          <a href="/2021/02/10/Vim/Vim-%E5%AF%B9%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E6%93%8D%E4%BD%9C/">
+            <span>Vim 对特殊字符的操作</span>
+          </a>
+        </div>
+      </div>
+    
   </div>
-  
-
-  
-
-  
-
-  
+</div>
 
         <div class="footer">
   <div class="social">
