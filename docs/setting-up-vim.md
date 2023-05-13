@@ -63,3 +63,23 @@ set guioptions-=m
 set guioptions-=L
 set guifont=CaskaydiaCove_NFM:h12,Cascadia_Code:h12,FiraCode_NF:h12,Fira_Code:h12,Consolas:h12,Courier_New:h12
 ```
+
+## Emacs 键位
+
+```vim
+imap <C-b> <Left>
+imap <C-f> <Right>
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <M-b> <S-Left>
+imap <M-f> <S-Right>
+imap <C-a> <Home>
+imap <C-e> <End>
+
+cmap <C-b> <Left>
+cmap <C-f> <Right>
+cmap <M-b> <S-Left>
+cmap <M-f> <S-Right>
+cmap <C-a> <Home>
+cmap <C-e> <End>
+```
