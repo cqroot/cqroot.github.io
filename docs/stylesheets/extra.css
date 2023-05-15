@@ -1,4 +1,9 @@
+:root {
+  --md-text-font: "Consolas", "Cascadia Code", "Microsoft Yahei", Roboto;
+  --md-code-font: "Consolas", "Cascadia Code", "Fira Code", "Microsoft Yahei", "Roboto Mono";
+}
+
 .md-header--shadow {
-	box-shadow: none;
-	border-bottom: 1px solid #ededed;
+  box-shadow: none;
+  border-bottom: 1px solid #ededed;
 }
