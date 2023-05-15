@@ -9,10 +9,11 @@ plugins:
 
 theme:
   name: material
+  icon:
+    logo: material/book-open
+    repo: fontawesome/brands/github
   palette:
     primary: white
-  icon:
-    repo: fontawesome/brands/github
   features:
     - navigation.sections
     - navigation.top
