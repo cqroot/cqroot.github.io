@@ -1,19 +1,16 @@
 commit:
   message-template: "{{.Type}} {{if .Scope}}({{.Scope}}): {{end}}{{.Summary}}"
   types:
-    - text: ✨
-      note: "feat: A new feature"
-    - text: 🎨
-      note: "refactor: A code change that neither fixes a bug nor adds a feature"
     - text: 📝
-      note: "docs: Documentation only changes"
+      note: "docs"
       enable-scope: true
       scopes:
         - config
         - linux
+        - windows
+    - text: 🎨
+      note: "refactor"
     - text: 🔧
-      note: "build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
+      note: "build"
     - text: 👷
-      note: "ci: Changes to our CI configuration files and scripts (examples: CircleCi, SauceLabs)"
-    - text: 🧪
-      note: "test: Adding missing tests or correcting existing tests"
+      note: "ci"
