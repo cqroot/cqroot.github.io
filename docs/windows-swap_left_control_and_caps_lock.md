@@ -1,4 +1,4 @@
-# Windows 下交换左 Ctrl 和 Caps Lock 键
+# Windows 交换左 Ctrl 和 Caps Lock 键
 
 ## Windows 下交换的方法
 
