@@ -7,6 +7,10 @@ commit:
       note: "refactor: A code change that neither fixes a bug nor adds a feature"
     - text: 📝
       note: "docs: Documentation only changes"
+      enable-scope: true
+      scopes:
+        - config
+        - linux
     - text: 🔧
       note: "build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)"
     - text: 👷
