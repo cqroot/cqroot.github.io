@@ -6,6 +6,7 @@ commit:
       enable-scope: true
       scopes:
         - config
+        - git
         - linux
         - windows
     - text: 🎨
