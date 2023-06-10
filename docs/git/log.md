@@ -21,4 +21,15 @@ git log --oneline $(git describe --tags --abbrev=0 @^)..@
 
 ```bash
 git log --pretty=format:"%ad - %an: %s" --after="2016-01-31" --until="2017-03-10" --author="John Doe"
+git log --pretty=format:'%C(yellow)%h %Cgreen%ad %Cblue%an%Cred%d %Creset%s' --date=short
+```
+
+## 查看某次提交的信息
+
+```bash
+# 查看某次提交的文件改动信息
+git show --raw {HASH}
+
+# 查看某次提交的改动内容
+git diff -stat HASH^ HASH
 ```
