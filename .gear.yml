@@ -9,6 +9,7 @@ commit:
         - git
         - linux
         - windows
+        - others
     - text: 🎨
       note: "refactor"
     - text: 🔧
