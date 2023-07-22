@@ -5,5 +5,5 @@
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 
 # 脚本所在路径的父路径
-PARENT_DIR=$(dirname "$SCRIPT_DIR")
+PARENT_DIR=$(dirname "${SCRIPT_DIR}")
 ```
