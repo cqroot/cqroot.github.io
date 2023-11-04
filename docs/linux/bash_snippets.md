@@ -28,6 +28,12 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 PARENT_DIR=$(dirname "${SCRIPT_DIR}")
 ```
 
+## 替换目录中某个字符串
+
+```bash
+grep -rl OLD_STR | xargs -i sed -i 's/OLD_STR/NEW_STR/g' {}
+```
+
 ## 统计某列中所有值出现的次数
 
 ```bash
