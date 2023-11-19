@@ -5,10 +5,9 @@ commit:
       note: "docs"
       enable-scope: true
       scopes:
-        - config
+        - c
         - git
         - linux
-        - windows
         - others
     - text: 🎨
       note: "refactor"
