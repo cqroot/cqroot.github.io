@@ -1,4 +1,4 @@
-# IntelliJ IDEA 配置
+# 配置 IntelliJ IDEA
 
 ## Settings
 
@@ -20,3 +20,11 @@
 - Atom Material Icons
 - Rainbow Brackets Lite
 - Active Tab Highlighter
+
+## .ideavimrc
+
+```vimscript
+let mapleader = ";"
+nmap <leader>rn  <Action>(RenameElement)
+nmap H           <Action>(QuickJavaDoc)
+```
