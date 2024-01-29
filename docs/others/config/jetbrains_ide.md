@@ -1,6 +1,13 @@
-# 配置 IntelliJ IDEA
+# 配置 JetBrains IDE
 
 ## Settings
+
+### Appearance & Behavior
+
+#### New UI
+
+- 选中 `Enable new UI`
+- 选中 `Compact mode`
 
 ### Editor
 
@@ -28,3 +35,18 @@ let mapleader = ";"
 nmap <leader>rn  <Action>(RenameElement)
 nmap H           <Action>(QuickJavaDoc)
 ```
+
+## Vim Keymap 设置
+
+| Shortcut | IDE Action | Handler |
+| -------- | ---------- | ------- |
+| Ctrl+D   |            | Vim     |
+| Ctrl+F   |            | IDE     |
+| Ctrl+S   |            | IDE     |
+| Ctrl+U   |            | Vim     |
+
+## 定制工具条
+
+在顶端标题栏处的工具条右键，选择 `Customize Main Toolbar`。
+
+在 Center 中 `Add Action`，选择 `Main Menu` -> `Navigate` 中的 `Back` 和 `Forward`。
