@@ -1,5 +1,15 @@
 # Bash Snippets
 
+## 获取脚本所在路径
+
+```bash
+# 脚本所在路径
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+
+# 脚本所在路径的父路径
+PARENT_DIR=$(dirname "${SCRIPT_DIR}")
+```
+
 ## 逐行处理输出
 
 ### 逐行处理文件
@@ -18,28 +28,28 @@ while read -r line; do echo $line; done < <(ls -l)
 ls -l | while read -r line; do echo $line; done
 ```
 
-## 获取脚本所在路径
+## 打印连续数字
 
 ```bash
-# 脚本所在路径
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+# 打印数字 1 到 10
+seq 1 10
 
-# 脚本所在路径的父路径
-PARENT_DIR=$(dirname "${SCRIPT_DIR}")
+# 打印等宽的数字 1 到 10
+seq -w 1 10
 ```
 
-## 替换目录中某个字符串
+## Find
+
+### 找出大于某个大小的文件
 
 ```bash
-grep -rl OLD_STR | xargs -i sed -i 's/OLD_STR/NEW_STR/g' {}
+find . -type f -size +100M
+find . -type f -size +100M -printf "%k KB %p\n" | sort -rnk 1
 ```
 
-## 统计某列中所有值出现的次数
+### 找出并且打印文件大小
 
 ```bash
-xxx | sort | uniq -c | sort -nr
+find . -name '*.txt' -exec ls -lh {}
+find . -name '*.txt' -printf "%p %k KB\n"
 ```
-
-- `sort`: 排序。这是为了让重复项排在一起。
-- `uniq -c`: 连续的重复项只会显示一个。`-c` 会在每个项目前添加重复次数。
-- `sort -nr`: 排序。`-n` 表示按数字排序。`-r` 会按照从大到小排序。
