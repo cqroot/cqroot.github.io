@@ -1,15 +1,11 @@
-# 用户和用户组
+# 01 - Linux 用户
 
 在 Linux 中，通过设置文件的属组和权限，来控制每个用户和组对文件的访问。
 
-## 1. 用户
-
-### 1.1. 用户 ID
+## 1. 用户 ID
 
 每个能访问 Linux 操作系统的用户都会被分配一个唯一的用户账户，拥有唯一的用户名和用户 ID，用户名和用户 ID 唯一对应。
-用户名是用户用来登录系统所用的最长 8 字符的字符串，由字母和数字组成。
-
-`root` 用户是 Linux 系统的管理员，其 ID 是固定分配的 0。
+用户名是用户用来登录系统所用的最长 8 字符的字符串，由字母和数字组成。`root` 用户是 Linux 系统的管理员，其 ID 是固定分配的 0。
 
 Linux 为系统账户预留了 500 以下的 ID。为普通用户创建用户时，大多数 Linux 发行版会从 500 开始，将第一个可用 ID 分配给该用户。但也并非所有发行版都这样，比如 Ubuntu 就是从 1000 开始的。
 
@@ -26,7 +22,7 @@ Linux 为系统账户预留了 500 以下的 ID。为普通用户创建用户时
 test:x:1000:1000::/home/test:/bin/bash
 ```
 
-### 1.2. passwd 文件
+## 2. passwd 文件
 
 Linux 系统使用一个专门的文件 `/etc/passwd` 来记录用户的信息。每一行为一个用户，内容如下形式：
 
@@ -63,7 +59,7 @@ test:x:1000:1000::/home/test:/bin/bash
 6. 用户的家目录路径；
 7. 用户的默认 shell。
 
-### 1.3. 用户的属性
+## 3. 用户的属性
 
 我们在上面新建用户时其实只指定了一个必填参数——用户名，操作系统会自动填充默认值给每个字段。可以使用以下命令查看每个字段的默认值：
 
@@ -90,9 +86,51 @@ CREATE_MAIL_SPOOL=yes
 我们也可以在创建用户时为每个字段指定特定的值：
 
 ```
-[root@localhost ~]# useradd -u 2000 -m -d /home/test_home -s /bin/sh test2
-[root@localhost ~]# grep '^test2:' /etc/passwd
-test2:x:2000:2000::/home/test_home:/bin/sh
+[root@localhost ~]# useradd -u 2000 -m -d /home/test_home -s /bin/sh test
+[root@localhost ~]# grep '^test:' /etc/passwd
+test:x:2000:2000::/home/test_home:/bin/sh
 ```
 
 其中，`-u 2000` 指定了新用户的 ID 为 2000，`-m` 会让操作系统自动创建你的用户家目录文件夹，`-d /home/test_home` 指定了新用户的家目录位置，`-s /bin/sh` 指定了新用户的默认 shell。
+
+## 4. 删除用户
+
+使用 `userdel` 可以从系统中删除用户：
+
+```
+[root@localhost ~]# grep '^test:' /etc/passwd
+test:x:1000:1000::/home/test:/bin/bash
+[root@localhost ~]# userdel test
+[root@localhost ~]# grep '^test:' /etc/passwd
+```
+
+## 5. 修改用户密码过期时间
+
+Linux 中，用户的密码过期时间默认配置在 `/etc/login.defs`。使用 `chage` 可以查看用户的密码过期时间：
+
+```
+[root@localhost ~]# # 查看 test 用户的密码过期信息
+[root@localhost ~]# chage -l test
+Last password change                                    : Aug 12, 2024
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 99999
+Number of days of warning before password expires       : 7
+```
+
+使用 `chage` 命令也可以修改用户的密码过期时间，比如将 `test` 用户密码的过期时间设置为 30 天后：
+
+```
+[root@localhost ~]# chage -M 30 test
+[root@localhost ~]# chage -l test
+Last password change                                    : Aug 12, 2024
+Password expires                                        : Sep 11, 2024
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 0
+Maximum number of days between password change          : 30
+Number of days of warning before password expires       : 7
+```
+

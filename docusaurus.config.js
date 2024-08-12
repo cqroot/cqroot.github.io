@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Keith Chu' Docs",
+  title: "Keith Chu' Notes",
   tagline: "-",
   // favicon: "img/favicon.ico",
 

@@ -31,5 +31,31 @@
 }
 
 .menu__link {
-    font-weight: normal !important;
+  font-weight: normal !important;
+}
+
+.container {
+  padding: 30px !important;
+}
+
+.theme-doc-breadcrumbs,
+.pagination-nav {
+  display: none !important;
+}
+
+.menu__link {
+  color: #000000 !important;
+  font-size: 14px !important;
+  padding: 3px 6px !important;
+}
+
+[data-theme="dark"] .menu__link {
+  color: #ffffff !important;
+}
+
+@media screen and (max-width: 996px) {
+  .menu__link {
+    font-size: 16px !important;
+    padding: 6px 12px !important;
+  }
 }

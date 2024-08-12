@@ -32,18 +32,6 @@ YOURUSERNAME ALL=(ALL) NOPASSWD: ALL
 
 你也可以选择将其追加到 `/etc/sudoers` 文件中。
 
-### 设置用户密码过期时间
-
-Linux 密码过期时间默认配置是在 `/etc/login.defs`。
-
-```bash
-# 查看 root 用户的密码过期信息
-chage -l root
-
-# 修改 root 用户的密码不过期
-chage -M 99999 root
-```
-
 ### 在多次错误输入后用户被锁定
 
 可以修改文件 `/etc/security/faillock.conf` 来改变用户允许输入密码错误的次数。
