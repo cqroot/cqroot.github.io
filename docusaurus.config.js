@@ -79,6 +79,12 @@ const config = {
             label: "Vim",
           },
           {
+            type: "docSidebar",
+            sidebarId: "toolsSidebar",
+            position: "left",
+            label: "Tools",
+          },
+          {
             href: "https://github.com/cqroot/cqroot.github.io",
             label: "GitHub",
             position: "right",
