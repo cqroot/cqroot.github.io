@@ -8,7 +8,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Keith Chu' Notes",
+  title: "KEITH CHU",
   tagline: "-",
   // favicon: "img/favicon.ico",
 
@@ -51,21 +51,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      // image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Keith Chu's Notes",
-        // logo: {
-        //   alt: "My Site Logo",
-        //   src: "img/logo.svg",
-        // },
+        title: "KEITH CHU",
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "docsSidebar",
-            position: "left",
-            label: "Docs",
-          },
           {
             type: "docSidebar",
             sidebarId: "linuxSidebar",
@@ -88,6 +76,12 @@ const config = {
             href: "https://github.com/cqroot/cqroot.github.io",
             label: "GitHub",
             position: "right",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "docsSidebar",
+            position: "left",
+            label: "Docs",
           },
         ],
       },
