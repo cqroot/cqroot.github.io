@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "KEITH CHU",
   tagline: "-",
-  // favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
 
   url: "https://cqroot.github.io/",
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -53,6 +53,10 @@ const config = {
     ({
       navbar: {
         title: "KEITH CHU",
+        logo: {
+          alt: "",
+          src: "img/favicon.svg",
+        },
         items: [
           {
             type: "docSidebar",
@@ -73,15 +77,15 @@ const config = {
             label: "Tools",
           },
           {
-            href: "https://github.com/cqroot/cqroot.github.io",
-            label: "GitHub",
-            position: "right",
-          },
-          {
             type: "docSidebar",
             sidebarId: "docsSidebar",
             position: "left",
             label: "Docs",
+          },
+          {
+            href: "https://github.com/cqroot/cqroot.github.io",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
