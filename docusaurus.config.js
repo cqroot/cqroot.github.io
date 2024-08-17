@@ -9,7 +9,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "KEITH CHU",
-  tagline: "-",
+  tagline: "A storage development engineer and Neovim enthusiast.",
   favicon: "img/favicon.svg",
 
   url: "https://cqroot.github.io/",
