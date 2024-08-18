@@ -38,6 +38,7 @@ const config = {
       ({
         docs: {
           sidebarPath: "./sidebars.js",
+          breadcrumbs: false,
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
@@ -51,6 +52,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+            hideable: false,
+        },
+      },
       navbar: {
         title: "KEITH CHU",
         logo: {
@@ -89,6 +95,7 @@ const config = {
           },
         ],
       },
+
       footer: {
         style: "dark",
         links: [
@@ -97,13 +104,14 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/cqroot/cqroot.github.io",
               },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
