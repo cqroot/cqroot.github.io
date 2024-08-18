@@ -26,7 +26,7 @@ test:x:1000:1000::/home/test:/bin/bash
 
 Linux 系统使用一个专门的文件 `/etc/passwd` 来记录用户的信息。每一行为一个用户，内容如下形式：
 
-```
+```text title="/etc/passwd"
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin

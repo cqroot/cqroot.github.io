@@ -4,8 +4,7 @@
 
 和用户类似，用户组的信息也保存在一个文件中。`/etc/group` 的内容示例如下：
 
-```
-[root@localhost ~]# cat /etc/group
+```text title="/etc/group"
 root:x:0:
 bin:x:1:
 daemon:x:2:

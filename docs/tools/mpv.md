@@ -23,7 +23,7 @@ MPV 的配置文件目录，在 Windows 下位于 `%APPDATA%/mpv/`，在 Linux �
 
 配置目录的 `mpv.conf` 里可以配置一些基础选项：
 
-```conf
+```text title="mpv.conf"
 keep-open=yes      # 视频播放完毕后不关闭窗口
 osd-font-size=30   # 设置界面字体
 volume=0           # 默认音量为 0
@@ -34,7 +34,7 @@ loop-playlist=inf  # 按播放列表循环
 
 快捷键的配置可以通过配置目录的 `input.conf` 来配置。
 
-```conf
+```text title="input.conf"
 RIGHT seek  5         # 向后跳 5s
 LEFT  seek -5         # 向前跳 5s
 UP     add volume 2   # 音量 +
