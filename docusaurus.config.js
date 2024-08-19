@@ -84,9 +84,9 @@ const config = {
           },
           {
             type: "docSidebar",
-            sidebarId: "docsSidebar",
+            sidebarId: "othersSidebar",
             position: "left",
-            label: "Docs",
+            label: "Others",
           },
           {
             href: "https://github.com/cqroot/cqroot.github.io",
