@@ -52,9 +52,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: "315L0HA6CP",
+        apiKey: "fbdf3a2a796a55211b2615d0b2db95ca",
+        indexName: "cqrootio",
+      },
       docs: {
         sidebar: {
-            hideable: false,
+          hideable: false,
         },
       },
       navbar: {
