@@ -1,6 +1,6 @@
-# Bash Snippets
+# 11 - Bash 常用片段
 
-## 获取脚本所在路径
+## 1. 获取脚本所在路径
 
 ```bash
 # 脚本所在路径
@@ -10,9 +10,9 @@ SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 PARENT_DIR=$(dirname "${SCRIPT_DIR}")
 ```
 
-## 逐行处理输出
+## 2. 逐行处理输出
 
-### 逐行处理文件
+### 2.1. 逐行处理文件
 
 ```bash
 while read -r line; do echo $line; done < FILENAME
@@ -20,7 +20,7 @@ while read -r line; do echo $line; done < FILENAME
 cat FILENAME | while read -r line; do echo "$line"; done
 ```
 
-### 逐行处理命令输出
+### 2.2. 逐行处理命令输出
 
 ```bash
 while read -r line; do echo $line; done < <(ls -l)
@@ -28,7 +28,7 @@ while read -r line; do echo $line; done < <(ls -l)
 ls -l | while read -r line; do echo $line; done
 ```
 
-## 打印连续数字
+## 3. 打印连续数字
 
 ```bash
 # 打印数字 1 到 10
@@ -38,16 +38,16 @@ seq 1 10
 seq -w 1 10
 ```
 
-## Find
+## 4. Find
 
-### 找出大于某个大小的文件
+### 4.1. 找出大于某个大小的文件
 
 ```bash
 find . -type f -size +100M
 find . -type f -size +100M -printf "%k KB %p\n" | sort -rnk 1
 ```
 
-### 找出并且打印文件大小
+### 4.2. 找出并且打印文件大小
 
 ```bash
 find . -name '*.txt' -exec ls -lh {}

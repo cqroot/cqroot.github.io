@@ -1,0 +1,69 @@
+# 90 - VirtualBox 安装 CentOS 7
+
+## 1. 下载 CentOS 镜像
+
+下载 CentOS 镜像：[https://vault.centos.org/](https://vault.centos.org/)
+
+## 2. 添加和配置虚拟机
+
+### 2.1. Virtual machine Name and Operating System
+
+点击菜单 `Machine` -> `New...`，输入虚机名，选择安装路径和要安装的镜像：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-1.png)
+
+VirtualBox 支持对 CentOS 进行自动安装。这里勾选 `Skip Unattened Installation` 来手动安装 CentOS。
+
+### 2.2. Hardware
+
+根据你的宿主机配置，对虚拟机分配适当的内存和处理器。
+
+### 2.3. Virtual Hard disk
+
+选择 `Create a Virtual Hard Disk Now`，然后选择要为虚拟机系统盘分配的容量大小。
+
+## 3. 安装操作系统
+
+双击刚刚创建的虚拟机来启动它。点击屏幕后会捕获你的鼠标，使用上下键选择 `Install CentOS 7`，回车键确认。默认右 Ctrl 可以取消捕获鼠标。
+
+移动到 `Install CentOS 7`，按回车确认：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-2.png)
+
+选择语言，默认英文即可：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-3.png)
+
+这里需要设置下安装位置 `INSTALLATION DESTINATION`，因为是虚拟机，直接选择整块盘即可：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-4.png)
+
+然后打开以太网：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-5.png)
+
+开始安装，在这里你可以设置 `root` 密码，也可以创建一个普通用户：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-6.png)
+
+安装完成，点击 `Reboot` 重启：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/screenshot-install_linux_on_virtualbox-7.png)
+
+## 4. 配置系统
+
+开机后进入终端界面，选择 root 用户，输入密码。注意，这里输入密码是没有回显的。
+
+### 4.1. 配置网络
+
+使用 `vi` 修改 `/etc/sysconfig/network-scripts` 下的 `ifcfg-*`（例如 `ifcfg-eth0` 或 `ifcfg-ens33`）文件。
+
+将 `ONBOOT` 的 `no` 修改为 `yes`。
+
+重启网络服务
+
+修改完成后还需要重新启动网络服务，使用以下命令：
+
+```bash
+systemctl restart network
+```
