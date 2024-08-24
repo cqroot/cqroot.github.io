@@ -48,6 +48,12 @@ DOWN   add volume -2  # 音量 +
 } multiply speed 1.1    # 速度增加 1.1 倍
 BS set speed 1.0        # 重置为正常速度
 
+# Playlist
+# **********************************************************
+Ctrl+l show-text ${playlist} 3000                 # 显示播放列表
+Ctrl+n playlist-next; show-text ${playlist} 3000  # 跳到播放列表的下一个文件
+Ctrl+p playlist-prev; show-text ${playlist} 3000  # 跳到播放列表的上一个文件
+
 Ctrl+r cycle_values video-rotate "90" "180" "270" "0"  # 视频旋转，每次顺时针旋转 90 度
 
 q no-osd set idle yes; stop  # 退出
