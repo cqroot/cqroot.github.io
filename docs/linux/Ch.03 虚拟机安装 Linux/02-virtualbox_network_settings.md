@@ -1,0 +1,41 @@
+# 02 - VirtualBox 网络设置
+
+## 1. 不同网络模式的区别
+
+| 模式           | VM \-\> Host | VM\<\-Host | VM1\<\-\>VM2 | VM\<\-\>VM2 | VM\-\>Net/LAN | VM\<\-Net/LAN |
+| -------------- | :----------: | :--------: | :----------: | :---------: | :-----------: | :-----------: |
+| **Host-only**  |     支持     |    支持    |     支持     |     --      |      --       |      --       |
+| **Internal**   |      --      |     --     |     支持     |     --      |      --       |      --       |
+| **Bridged**    |     支持     |    支持    |     支持     |    支持     |     支持      |     支持      |
+| **NAT**        |     支持     |  端口转发  |      --      |     --      |     支持      |   端口转发    |
+| **NATservice** |     支持     |  端口转发  |     支持     |    支持     |     支持      |   端口转发    |
+
+[Virtual Networking](https://www.virtualbox.org/manual/ch06.html)
+
+## 2. Windows 设置桥接模式
+
+打开 `Network and Sharing Center`，点击你连接的网络：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-1.png)
+
+点击 `Properties`：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-2.png)
+
+点击 `Install`：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-3.png)
+
+选择 `Service`，点击 `Add`：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-4.png)
+
+点击 `Have Disk...`，从磁盘安装，选择 VirtualBox 安装目录下的 `drivers/network/netlwf/VBoxNetLwf.inf`，然后点击确定：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-5.png)
+
+一路确认即可：
+
+![](https://pics-1324197765.cos.ap-shanghai.myqcloud.com/virtualbox_network_settings-6.png)
+
+安装完成后，打开 VirtualBox 设置网络，选择桥接模式和对应网卡即可。

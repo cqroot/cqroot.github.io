@@ -1,4 +1,4 @@
-# 90 - VirtualBox 安装 CentOS 7
+# 01 - VirtualBox 安装 CentOS 7
 
 ## 1. 下载 CentOS 镜像
 
