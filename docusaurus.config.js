@@ -122,9 +122,9 @@ const config = {
       },
 
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-        additionalLanguages: ["bash"],
+        theme: prismThemes.oneDark,
+        darkTheme: prismThemes.oneDark,
+        additionalLanguages: ["bash", "c", "cpp", "go", "lua"],
       },
     }),
 };
