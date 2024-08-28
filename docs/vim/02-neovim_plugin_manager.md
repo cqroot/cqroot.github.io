@@ -1,12 +1,12 @@
 # 02 - Neovim 插件管理器
 
-在转用 Neovim 前，我在 Vim 下使用了很久的 [vim-plug](https://github.com/junegunn/vim-plug) 来管理我的插件。vim-plug 的配置非常简单，但功能又足够强大。
+在转用 `Neovim` 前，我在 `Vim` 下使用了很久的 [vim-plug](https://github.com/junegunn/vim-plug) 来管理我的插件。`vim-plug` 的配置非常简单，但功能又足够强大。
 
-转用 Neovim 后，我选择了 [lazy.nvim](https://github.com/folke/lazy.nvim)。lazy.nvim 完全使用 lua 配置，功能强大。
+转用 `Neovim` 后，我选择了 [lazy.nvim](https://github.com/folke/lazy.nvim)。`lazy.nvim` 完全使用 `lua` 配置，功能强大。
 
 ## 1. 安装 lazy.nvim
 
-```lua title="lua/plugins.lua"
+```lua title="lua/plugins/init.lua"
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
