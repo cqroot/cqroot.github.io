@@ -15,17 +15,26 @@ PARENT_DIR=$(dirname "${SCRIPT_DIR}")
 ### 2.1. 逐行处理文件
 
 ```bash
-while read -r line; do echo $line; done < FILENAME
-# or
-cat FILENAME | while read -r line; do echo "$line"; done
+while read -r line; do
+    echo "${line}"
+done <FILENAME
 ```
 
 ### 2.2. 逐行处理命令输出
 
 ```bash
-while read -r line; do echo $line; done < <(ls -l)
-# or
-ls -l | while read -r line; do echo $line; done
+while read -r line; do
+    echo "${line}"
+done < <(ls -l)
+```
+
+### 2.3. 逐行处理变量内容
+
+```bash
+sometext=$(ls -l)
+while read -r line; do
+    echo "${line}"
+done <<<"${sometext}"
 ```
 
 ## 3. 打印连续数字
