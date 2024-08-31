@@ -87,6 +87,12 @@ const config = {
           },
           {
             type: "docSidebar",
+            sidebarId: "pythonSidebar",
+            position: "left",
+            label: "Python",
+          },
+          {
+            type: "docSidebar",
             sidebarId: "toolsSidebar",
             position: "left",
             label: "Tools",
