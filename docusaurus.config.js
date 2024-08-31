@@ -81,15 +81,15 @@ const config = {
           },
           {
             type: "docSidebar",
-            sidebarId: "vimSidebar",
-            position: "left",
-            label: "Vim",
-          },
-          {
-            type: "docSidebar",
             sidebarId: "pythonSidebar",
             position: "left",
             label: "Python",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "vimSidebar",
+            position: "left",
+            label: "Vim",
           },
           {
             type: "docSidebar",
