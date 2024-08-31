@@ -12,7 +12,7 @@ sudo ln -s python2 /usr/bin/python
 ## 2. 构建指定版本的 cpython
 
 ```bash
-python_tag=v2.6.9
+python_tag=2.7
 git clone https://github.com/python/cpython.git -b "${python_tag}" "cpython-${python_tag}"
 cd "cpython-${python_tag}"
 

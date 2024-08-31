@@ -3,11 +3,18 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+## 中文处理
+
+如果在 Python 脚本中出现了中文，需要在 shebang 下添加一行：
+
+```python
+# -*- coding: utf-8 -*-
+```
+
 ## print
 
-在 Python 2 下，`print` 是一个内置语句，通过 `print "string"` 的方式使用。
-
-在 Python 3 下，`print` 是一个内置函数，通过 `print("string")` 的方式使用。
+- 在 Python 2 下，`print` 是一个内置语句，通过 `print "string"` 的方式使用；
+- 在 Python 3 下，`print` 是一个内置函数，通过 `print("string")` 的方式使用。
 
 <Tabs>
   <TabItem value="Python 2.x" label="Python 2.x" default>
@@ -20,7 +27,7 @@ import TabItem from '@theme/TabItem';
     print("blah blah")
     ```
   </TabItem>
-  <TabItem value="All versions" label="All versions">
+  <TabItem value="Python 2.6+" label="Python 2.6+">
     ```python
     from __future__ import print_function
     print("blah blah", 123)
@@ -31,7 +38,7 @@ import TabItem from '@theme/TabItem';
 ## str.format
 
 <Tabs>
-  <TabItem value="All versions" label="All versions" default>
+  <TabItem value="Python 2.6+" label="Python 2.6+" default>
     ```python
     "str: {0}, int: {1}.".format("string", 10)
     "str: %s, int: %d." % ("string", 10)
@@ -44,7 +51,12 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## 整数除法返回整数
+## 整数除法
+
+- Python 2 下，整数除法总是返回整数；
+- Python 3 下，整数除法总是返回浮点数。
+
+希望返回整数：
 
 <Tabs>
   <TabItem value="Python 2.x" label="Python 2.x" default>
@@ -53,7 +65,7 @@ import TabItem from '@theme/TabItem';
     type(3 / 2)
     ```
   </TabItem>
-  <TabItem value="Python 3.x" label="Python 3.x">
+  <TabItem value="All versions" label="All versions">
     ```python
     3 // 2
     type(3 // 2)
@@ -61,7 +73,7 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## 整数除法返回浮点数
+希望返回浮点数：
 
 <Tabs>
   <TabItem value="All versions" label="All versions" default>
