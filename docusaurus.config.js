@@ -24,7 +24,7 @@ const config = {
   onBrokenMarkdownLinks: "warn",
 
   markdown: {
-    format: "md",
+    format: "mdx",
   },
 
   // Even if you don't use internationalization, you can use this field to set
