@@ -114,3 +114,8 @@ import TabItem from '@theme/TabItem';
     ```
   </TabItem>
 </Tabs>
+
+## 字符编码
+
+- Python 2 的默认字符编码为 ascii；
+- Python 3 的默认字符编码为 utf-8；
