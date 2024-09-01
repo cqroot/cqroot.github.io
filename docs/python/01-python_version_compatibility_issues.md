@@ -11,6 +11,11 @@ import TabItem from '@theme/TabItem';
 # -*- coding: utf-8 -*-
 ```
 
+## 字符编码
+
+- Python 2 的默认字符编码为 ascii；
+- Python 3 的默认字符编码为 utf-8；
+
 ## print
 
 - 在 Python 2 下，`print` 是一个内置语句，通过 `print "string"` 的方式使用；
@@ -114,8 +119,3 @@ import TabItem from '@theme/TabItem';
     ```
   </TabItem>
 </Tabs>
-
-## 字符编码
-
-- Python 2 的默认字符编码为 ascii；
-- Python 3 的默认字符编码为 utf-8；
