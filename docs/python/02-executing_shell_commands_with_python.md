@@ -1,4 +1,4 @@
-# Python 执行 shell 命令
+# 02 - Python 执行 shell 命令
 
 Python 执行 shell 命令，并获取脚本返回值、脚本输出到 stdout 的内容、脚本输出到 stderr 的内容（各版本兼容）：
 

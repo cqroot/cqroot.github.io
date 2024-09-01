@@ -1,4 +1,4 @@
-# Python logging 模块
+# 03 - Python logging 模块
 
 ## 1. 使用全局配置
 
@@ -8,14 +8,16 @@
 import logging
 
 logging.basicConfig(
-    format="%(asctime)s [%(name)s] - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s",
+    format="[%(asctime)s] [%(levelname)5s] [%(name)s] [%(pathname)s:%(lineno)d] %(message)s",
     level=logging.DEBUG,
 )
-logging.debug('debug 信息')
-logging.info('info 信息')
-logging.warning('warning 信息')
-logging.error('error 信息')
-logging.critical('critial 信息')
+logging.addLevelName(logging.WARNING, "WARN")
+
+logging.debug("Debug message")
+logging.info("Info message")
+logging.warning("Warning message")
+logging.error("Error message")
+logging.critical("Critial message")
 ```
 
 保存到文件：
@@ -25,7 +27,7 @@ logging.basicConfig(
     level=logging.DEBUG,  # 控制台打印的日志级别
     filename="new.log",
     filemode="a",
-    format="%(asctime)s [%(name)s] - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s",
+    format="[%(asctime)s] [%(levelname)5s] [%(name)s] [%(pathname)s:%(lineno)d] %(message)s",
 )
 ```
 
@@ -52,20 +54,34 @@ logging.basicConfig(
 ## 3. 使用 logger
 
 ```python
-logger = logging.getLogger("logger_name")
-formatter = logging.Formatter(
-"%(asctime)s %(name)s - %(levelname)s: %(message)s"
-)
+import logging
 
-# terminal
-stream_handler = logging.StreamHandler()
-stream_handler.setFormatter(formatter)
-logger.addHandler(stream_handler)
 
-# file
-file_handler = logging.FileHandler(logname, 'a')
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
+def get_logger(name):
+    logger = logging.getLogger(name)
 
-logger.setLevel(logging.INFO)
+    logging.addLevelName(logging.WARNING, "WARN")
+    formatter = logging.Formatter(
+        "[%(asctime)s] [%(levelname)5s] [%(name)s] [%(pathname)s:%(lineno)d] %(message)s"
+    )
+    logger.setLevel(logging.INFO)
+
+    # stdout
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
+
+    # file
+    file_handler = logging.FileHandler("./%s.log" % name, "a")
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+    return logger
+
+
+logger = get_logger("test")
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning message")
+logger.error("Error message")
 ```
