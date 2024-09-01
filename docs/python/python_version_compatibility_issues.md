@@ -35,13 +35,17 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## str.format
+## 字符串格式化
 
 <Tabs>
+  <TabItem value="All versions" label="All versions" default>
+    ```python
+    "str: %s, int: %d." % ("string", 10)
+    ```
+  </TabItem>
   <TabItem value="Python 2.6+" label="Python 2.6+" default>
     ```python
     "str: {0}, int: {1}.".format("string", 10)
-    "str: %s, int: %d." % ("string", 10)
     ```
   </TabItem>
   <TabItem value="Python 2.7+" label="Python 2.7+">
@@ -53,8 +57,8 @@ import TabItem from '@theme/TabItem';
 
 ## 整数除法
 
-- Python 2 下，整数除法总是返回整数；
-- Python 3 下，整数除法总是返回浮点数。
+- Python 2 下，两个整数相除总是返回整数；
+- Python 3 下，除法总是返回浮点数。
 
 希望返回整数：
 
@@ -86,6 +90,27 @@ import TabItem from '@theme/TabItem';
     ```python
     3 / 2
     type(3 / 2)
+    ```
+  </TabItem>
+</Tabs>
+
+## 异常处理
+
+<Tabs>
+  <TabItem value="Python 2.x" label="Python 2.x" default>
+    ```python
+    try:
+        raise TypeError, "类型错误"
+    except TypeError, error:
+        print(error)
+    ```
+  </TabItem>
+  <TabItem value="Python 2.6+" label="Python 2.6+">
+    ```python
+    try:
+        raise TypeError("类型错误")
+    except TypeError as error:
+        print(error)
     ```
   </TabItem>
 </Tabs>
