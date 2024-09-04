@@ -1,4 +1,4 @@
-# Scoop
+# Scoop - Windows 软件包管理器
 
 ## 1. 安装
 
