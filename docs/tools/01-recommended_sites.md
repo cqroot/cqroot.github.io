@@ -1,5 +1,8 @@
 # 好用的站点推荐
 
+## GitHub
+
+- [GitHub Status](https://www.githubstatus.com/): 查看最近的 GitHub 站点状态。
 - [grep.app](https://grep.app/): 快速搜索开源代码。
 - [httpbin](https://httpbin.org/): 一个简单的 HTTP 服务。可以用于验证 HTTP 请求相关的操作。
 - [DevDocs](https://devdocs.io/): 在线/离线 API 文档。

@@ -81,6 +81,12 @@ const config = {
           },
           {
             type: "docSidebar",
+            sidebarId: "cSidebar",
+            position: "left",
+            label: "C Language",
+          },
+          {
+            type: "docSidebar",
             sidebarId: "pythonSidebar",
             position: "left",
             label: "Python",

@@ -15,18 +15,6 @@ gcc 增加 `-g` 参数。
 
 ## 调试 core 问题
 
-Compile your application with -g, then you'll have debug symbols in the binary file.
-
-Use gdb to open the gdb console.
-
-Use file and pass it your application's binary file in the console.
-
-Use run and pass in any arguments your application needs to start.
-
-Do something to cause a Segmentation Fault.
-
-Type bt in the gdb console to get a stack trace of the Segmentation Fault.
-
 1. 构建时添加 `-g` 参数。如果使用的是 `CMake`，添加 `-DCMAKE_BUILD_TYPE=Debug` 参数；
 2. `gdb`；
 3. 使用 `file` 命令并传入对应的二进制文件；
