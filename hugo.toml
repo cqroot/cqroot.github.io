@@ -9,3 +9,7 @@ path = "github.com/alex-shpak/hugo-book"
 [params]
 BookTheme = "auto"
 BookToC = true
+
+[caches]
+[caches.images]
+dir = ":cacheDir/images"
