@@ -1,0 +1,11 @@
+baseURL = "https://cqroot.github.io/"
+languageCode = "en-us"
+title = "Keith Chu's Blog"
+
+[module]
+[[module.imports]]
+path = "github.com/alex-shpak/hugo-book"
+
+[params]
+BookTheme = "auto"
+BookToC = true
