@@ -1,6 +1,6 @@
 baseURL = "https://cqroot.github.io/"
 languageCode = "en-us"
-title = "Keith Chu's Blog"
+title = "Keith's Blog"
 
 [module]
 [[module.imports]]
@@ -13,3 +13,9 @@ BookToC = true
 [caches]
 [caches.images]
 dir = ":cacheDir/images"
+
+[menu]
+[[menu.after]]
+name = "Github"
+url = "https://github.com/cqroot"
+weight = 10
