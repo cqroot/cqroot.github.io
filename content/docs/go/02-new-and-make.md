@@ -1,5 +1,5 @@
 ---
-title: "Go 语言中 new 和 make 的区别"
+title: "02. Go 语言中 new 和 make 的区别"
 weight: 2
 ---
 

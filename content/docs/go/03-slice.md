@@ -1,5 +1,5 @@
 ---
-title: "Go 语言中的 slice 类型"
+title: "03. Go 语言中的 slice 类型"
 weight: 3
 ---
 
