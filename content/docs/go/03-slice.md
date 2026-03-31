@@ -156,7 +156,26 @@ func nextslicecap(newLen, oldCap int) int {
 
 如果函数内部需要改变原 `slice` 的长度或容量，并需要在函数外部生效，可以选择返回一个新的 `slice` 让函数外部接收。
 
-## 4. 拷贝 `slice`
+## 4. 切片 `slice`
+
+切片允许你从现有 `slice` 或数组中创建新的 `slice`，而无需复制底层数据。
+
+```go
+newSlice := s[low:high]     // 从 low 到 high
+newSlice := s[low:high:cap] // 从 low 到 high
+newSlice := s[:high]        // 从开头到 high
+newSlice := s[low:]         // 从 low 到末尾
+newSlice := s[:]            // 整个切片
+```
+
+通过切片创建的新 `slice`，和原 `slice` 共享一个底层数组。
+
+- 对于 `s[low:high]` 的写法，新 `slice` 的容量为 `cap(s) - low`；
+- 对于 `s[low:high:cap]` 的写法，在切片的基础上，限制新 `slice` 能访问到原底层数组的最大索引位置。`0 <= low <= high <= cap <= cap(s)`。新 `slice` 的容量为 `cap - low`。
+
+对新 `slice` 进行 `append` 操作，超过新 `slice` 的容量后，新 `slice` 会触发重新分配，此时新老 `slice` 不再共享底层数组。
+
+## 5. 拷贝 `slice`
 
 直接将一个 `slice` 赋值给另一个 `slice`，属于**浅拷贝**，两个 `slice` 还是使用同一个底层数组。如果需要**深拷贝**，可以使用 `copy` 函数或 `append` 函数。
 
