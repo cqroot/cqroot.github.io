@@ -1,6 +1,6 @@
 ---
 title: "02. Go 语言中 new 和 make 的区别"
-weight: 2
+weight: 102
 ---
 
 # Go 语言中 `new` 和 `make` 的区别
