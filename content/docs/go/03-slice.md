@@ -156,7 +156,40 @@ func nextslicecap(newLen, oldCap int) int {
 
 如果函数内部需要改变原 `slice` 的长度或容量，并需要在函数外部生效，可以选择返回一个新的 `slice` 让函数外部接收。
 
-## 4. 切片 `slice`
+## 4. 遍历 `slice`
+
+### 4.1. 通过索引遍历
+
+```go
+for i := 0; i < len(s); i++ {
+    fmt.Println(s[i])
+}
+```
+
+这种方式可以修改 `slice` 中元素的值。
+
+### 4.2. for-range 遍历
+
+```go
+// 遍历索引和值
+for i, v := range s {
+    fmt.Printf("index: %d, value: %d\n", i, v)
+}
+
+// 只遍历索引
+for i := range s {
+    fmt.Println(s[i])
+}
+
+// 只遍历值
+for _, v := range s {
+    fmt.Println(v)
+}
+```
+
+使用 for-range 遍历的话，返回的 `v` 的 `slice` 中元素的值的拷贝。对 `v` 的修改不会影响到 `slice` 中的内容。
+
+## 5. 切片 `slice`
 
 切片允许你从现有 `slice` 或数组中创建新的 `slice`，而无需复制底层数据。
 
@@ -175,7 +208,7 @@ newSlice := s[:]            // 整个切片
 
 对新 `slice` 进行 `append` 操作，超过新 `slice` 的容量后，新 `slice` 会触发重新分配，此时新老 `slice` 不再共享底层数组。
 
-## 5. 拷贝 `slice`
+## 6. 拷贝 `slice`
 
 直接将一个 `slice` 赋值给另一个 `slice`，属于**浅拷贝**，两个 `slice` 还是使用同一个底层数组。如果需要**深拷贝**，可以使用 `copy` 函数或 `append` 函数。
 
