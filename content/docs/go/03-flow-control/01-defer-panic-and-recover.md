@@ -1,6 +1,6 @@
 ---
-title: "3.1 Go 语言中的 defer、panic 和 recover"
-weight: 301
+title: "01. Go 语言中的 defer、panic 和 recover"
+weight: 1
 ---
 
 # Go 语言中的 `defer`、`panic` 和 `recover`

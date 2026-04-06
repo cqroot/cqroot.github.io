@@ -1,6 +1,6 @@
 ---
-title: "2.1 Go 语言中的 slice 类型"
-weight: 201
+title: "01. Go 语言中的 slice 类型"
+weight: 1
 ---
 
 # Go 语言中的 `slice` 类型
