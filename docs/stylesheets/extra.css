@@ -1,0 +1,9 @@
+@media screen and (min-width: 76.25em) {
+    .md-header__inner,
+    .md-tabs .md-grid,
+    .md-main__inner,
+    .md-footer__inner,
+    .md-footer-meta__inner {
+        max-width: 2000px;
+    }
+}
