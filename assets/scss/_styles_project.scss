@@ -1,0 +1,34 @@
+/*
+Projects can override this file. For details, see:
+https://www.docsy.dev/docs/content/lookandfeel/#project-style-files
+*/
+
+:root {
+  --bs-body-font-family: "DejaVu Sans", "DejaVu Serif", "Lucida Serif",
+    "Lucida Sans", Verdana, Courier, helvetica, serif, sans-serif;
+  --bs-body-font-size: 15px;
+  --bs-font-monospace: "DejaVu Sans Mono", SFMono-Regular, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+}
+
+a {
+  font-family: Verdana;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: "DejaVu Sans Mono", SFMono-Regular, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
+}
+
+table {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
