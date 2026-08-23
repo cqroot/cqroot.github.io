@@ -1,10 +1,7 @@
 +++
 date = '2026-08-23T19:50:11+08:00'
-draft = true
-title = 'Bash Cheatsheets'
+title = 'Bash 速查表'
 +++
-
-# Bash 速查表
 
 ## 1. Bash set 选项
 
