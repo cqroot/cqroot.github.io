@@ -1,6 +1,7 @@
 +++
 date = '2026-08-23T22:48:18+08:00'
 title = '01. Go 语言中的 defer、panic 和 recover'
+weight = 10
 +++
 
 ## 1. `defer`：延迟执行
