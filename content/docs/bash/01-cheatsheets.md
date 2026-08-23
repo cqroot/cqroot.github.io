@@ -1,6 +1,7 @@
 +++
 date = '2026-08-23T19:50:11+08:00'
 title = 'Bash 速查表'
+weight = 10
 +++
 
 ## 1. Bash set 选项

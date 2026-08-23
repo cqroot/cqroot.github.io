@@ -28,7 +28,21 @@ samp {
     "Courier New", monospace;
 }
 
+.td-content .highlight,
+.td-content pre {
+  border-radius: 0.5rem;
+}
+
 table {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
+}
+
+.td-content table > :not(caption) > * > * {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+.td-content table > :not(caption) > *:first-child > * {
+  border-top-width: 1px;
 }
