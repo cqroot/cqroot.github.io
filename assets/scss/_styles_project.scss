@@ -6,7 +6,6 @@ https://www.docsy.dev/docs/content/lookandfeel/#project-style-files
 :root {
   --bs-body-font-family: "DejaVu Sans", "DejaVu Serif", "Lucida Serif",
     "Lucida Sans", Verdana, Courier, helvetica, serif, sans-serif;
-  --bs-body-font-size: 15px;
   --bs-font-monospace: "DejaVu Sans Mono", SFMono-Regular, Menlo, Monaco,
     Consolas, "Courier New", monospace;
 }
@@ -35,7 +34,6 @@ samp {
 
 table {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
 }
 
 .td-content table > :not(caption) > * > * {
