@@ -11,7 +11,7 @@ offlineSearch = true
 showLightDarkModeMenu = true
 sidebar_menu_compact = true
 ul_show = 1
-sidebar_menu_foldable = true
+sidebar_menu_foldable = false
 sidebar_cache_limit = 1000
 
 [[menu.main]]
