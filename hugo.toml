@@ -20,6 +20,11 @@ weight = 40
 url = "/docs"
 
 [[menu.main]]
+name = "Go"
+weight = 45
+url = "/go"
+
+[[menu.main]]
 weight = 50
 url = "https://github.com/cqroot/cqroot.github.io"
 pre = "<i class='fa-brands fa-github'></i>"
