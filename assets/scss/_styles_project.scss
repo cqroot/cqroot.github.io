@@ -4,8 +4,11 @@ https://www.docsy.dev/docs/content/lookandfeel/#project-style-files
 */
 
 :root {
-  --bs-body-font-family: "DejaVu Sans", "DejaVu Serif", "Lucida Serif",
-    "Lucida Sans", Verdana, Courier, helvetica, serif, sans-serif;
+  --bs-body-font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC",
+    "Hiragino Sans GB", "Source Han Sans SC", "Noto Sans CJK SC",
+    "WenQuanYi Micro Hei", "DejaVu Sans", "DejaVu Serif", "Lucida Serif",
+    "Lucida Sans", Verdana, Courier, helvetica, "SimSun", "宋体", serif,
+    sans-serif;
   --bs-font-monospace: "DejaVu Sans Mono", SFMono-Regular, Menlo, Monaco,
     Consolas, "Courier New", monospace;
 }
