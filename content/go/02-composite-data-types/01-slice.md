@@ -35,7 +35,7 @@ fmt.Println(len(arr4), arr4)
 
 在 Go 中，`slice` 表示一个拥有相同类型元素的可变长度的序列，写作 `[]T`，其中元素的类型都是 `T`。
 
-`slice` 的定义位于 [`src/runtime/slice.go`](https://github.com/golang/go/blob/d99be5c44449a3a40a62942272e99642962a37d9/src/runtime/slice.go#L16)：
+`slice` 的定义位于 [`src/runtime/slice.go`](https://github.com/golang/go/blob/go1.26.8/src/runtime/slice.go#L16)：
 
 ```go
 type slice struct {
