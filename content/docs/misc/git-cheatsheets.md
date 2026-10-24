@@ -30,3 +30,24 @@ git rebase -i HEAD~3 # 显示最近的 3 个提交
 
 - `squash`：会保留被合并提交的提交信息，让你编辑合并后的信息；
 - `fixup`：直接丢弃被合并提交的提交信息，只保留目标提交的信息。
+
+## 基于 main 合并 GitHub Pull Request
+
+GitHub 会把每个 PR 的提交暴露为只读引用 `refs/pull/<编号>/head`，无需添加 remote 即可拉取。
+
+下面的流程先获取远端最新的 `main`，在其基础上新建分支，再合入 PR #115 的内容：
+
+```bash
+# 1. 获取远端最新的 main（更新 origin/main）
+git fetch origin main
+
+# 2. 基于 origin/main 新建并切换到 pr-115 分支
+git switch -c pr-115 origin/main
+
+# 3. 拉取 PR #115 的内容
+git fetch origin pull/115/head
+
+# 4. 将 PR 内容合并到当前分支
+git merge --no-ff FETCH_HEAD
+```
+
