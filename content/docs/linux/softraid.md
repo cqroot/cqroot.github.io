@@ -204,9 +204,11 @@ dd if=/mnt/raid5/test of=/dev/null bs=1M iflag=direct
 
 ## 5. 常见操作
 
-### 5.1. 模拟磁盘故障
+### 5.1. 从阵列中移除磁盘
 
-把一块盘标记为故障（仅在演练时使用）：
+#### 5.1.1. 模拟磁盘故障（演练场景）
+
+仅在测试 / 演练时使用。真实故障盘可能已经无法响应 `--fail`，会自动被踢出。
 
 ```bash
 sudo mdadm /dev/md0 --fail /dev/sdc
@@ -218,11 +220,66 @@ sudo mdadm /dev/md0 --fail /dev/sdc
 sudo mdadm /dev/md0 --remove /dev/sdc
 ```
 
-查看状态：
+#### 5.1.2. 强制踢除一块盘（生产 / 退役场景）
+
+适用于"主动退役某块盘"或"磁盘已被标记 faulty 但还未移除"两种情况。
+
+步骤 1：确认要踢除的盘确实在阵列中且状态正确
+
+```bash
+sudo mdadm --detail /dev/md0 | grep -E "Number|Member|Role|State"
+sudo mdadm --examine /dev/sdc
+```
+
+确认 `/dev/sdc` 的 `State` 是 `spare` / `active` / `failed` 之一，且 RAID 仍能容忍这块盘下线（RAID 5 至少需要 3 盘，踢完还要 ≥2 盘；RAID 1 至少 2 盘，踢完还要 ≥1 盘）。
+
+步骤 2：标记故障
+
+```bash
+sudo mdadm /dev/md0 --fail /dev/sdc
+```
+
+> 如果盘已经离线（无法响应），跳过这一步，直接 `--remove` 即可。
+
+步骤 3：踢除
+
+```bash
+sudo mdadm /dev/md0 --remove /dev/sdc
+```
+
+步骤 4：清除 RAID 元数据，让这块盘可以被其他系统或 RAID 识别为"未配置"
+
+```bash
+sudo mdadm --zero-superblock /dev/sdc
+```
+
+如果磁盘之前用的是整盘（无分区），这步就够。如果用了分区，对每个分区都要清：
+
+```bash
+sudo mdadm --zero-superblock /dev/sdc1
+```
+
+可选：彻底擦除整块盘的数据
+
+```bash
+sudo wipefs -a /dev/sdc
+sudo dd if=/dev/zero of=/dev/sdc bs=1M status=progress
+```
+
+步骤 5：查看阵列当前状态
 
 ```bash
 cat /proc/mdstat
 sudo mdadm --detail /dev/md0
+```
+
+正常输出 `State : clean, degraded`，且少了一块盘。
+
+步骤 6：更新 `mdadm.conf`（仅当被踢除盘之前是热备 / 命名盘）
+
+```bash
+sudo mdadm --detail --scan | sudo tee /etc/mdadm.conf
+sudo update-initramfs -u   # 或 dracut -f
 ```
 
 ### 5.2. 替换故障盘
