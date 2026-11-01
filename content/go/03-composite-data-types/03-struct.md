@@ -76,7 +76,7 @@ func modifyByPointer(u *User) {
 
 ## 4. 方法定义
 
-Go 的方法可以定义在值接收者或指针接收者上：
+Go 的方法可以定义在**值接收者**或**指针接收者**上：
 
 ```go
 type Rectangle struct {
