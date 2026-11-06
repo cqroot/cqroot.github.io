@@ -3,6 +3,11 @@ locale = "en-us"
 title = "Keith's Site"
 theme = "docsy/theme"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [params]
 favicon = "/favicon.svg"
 offlineSearch = true
